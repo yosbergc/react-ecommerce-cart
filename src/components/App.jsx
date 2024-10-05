@@ -1,16 +1,13 @@
 import './app.css'
-import { useProducts } from '../hooks/useProducts'
+import { useFilters } from '../hooks/useFilters'
 import { Products } from './Products'
-import { Loading } from './Loading'
+
 function App() {
-    const { products, error, loading } = useProducts()
+    const { filteredProducts: products } = useFilters()
     return (
         <main>
             <h1>The Big Ecommerce Store</h1>
             <Products products={products}/>
-            {
-                loading && <Loading />
-            }
         </main>
     )
 }
