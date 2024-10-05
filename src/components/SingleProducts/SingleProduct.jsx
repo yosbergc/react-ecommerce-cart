@@ -1,7 +1,8 @@
 import './singleproduct.css'
+
 import { CiShoppingCart } from "react-icons/ci";
 
-function SingleProduct({ title, SKU, imageSrc, price, brand, category }) {
+function SingleProduct({ title, SKU, imageSrc, price, brand, category, addProduct }) {
     return (
         <article className="single-product-card">
             <img src={imageSrc} alt={title} />
@@ -12,7 +13,7 @@ function SingleProduct({ title, SKU, imageSrc, price, brand, category }) {
                     <strong>${price}</strong>
                 </section>
                 <p className="category-product">{category}</p>
-                <button className="add-to-cart-btn">
+                <button className="add-to-cart-btn" onClick={addProduct}>
                     <CiShoppingCart size={20}/>
                     Add To Cart
                 </button>

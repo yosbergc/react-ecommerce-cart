@@ -1,10 +1,12 @@
-import { useId, useState } from 'react'
+import { useId, useState, useContext } from 'react'
+import { CartContext } from '../../context/Cart';
 import { IoCartOutline } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
 import { MdOutlineAddShoppingCart } from "react-icons/md";
 import './cart.css'
 import './singlecartitem.css'
 function Cart() {
+    const { cart } = useContext(CartContext)
     const [showCart, setShowCart] = useState(false)
     function handleShow() {
         setShowCart(!showCart)
@@ -23,7 +25,18 @@ function Cart() {
                     <IoMdClose size={20} onClick={handleShow} style={{cursor: "pointer"}}/>
                 </header>
                 <section className="cart-body">
-                    <SingleCartItem />
+                    {
+                        cart.map(producto => {
+                            return <SingleCartItem
+                                key={producto.id}
+                                title={producto.id}
+                                brand={producto.brand}
+                                price={producto.price}
+                                thumbnail={producto.thumbnail}
+                                quantity={producto.quantity}
+                            />
+                        })
+                    }
                 </section>
             </section>
             )
@@ -32,21 +45,21 @@ function Cart() {
     )
 }
 
-function SingleCartItem() {
+function SingleCartItem({ title, brand, price, thumbnail, quantity}) {
     return (
         <article className="cart-single-product">
             <section className="inner-single-product">
                 <section className="partOne">
-                    <img src="https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png" alt="Product" />
+                    <img src={thumbnail} alt={title} />
                     <section className="information-single">
-                        <h3>Essence Mascara Lash Princess</h3>
-                        <strong>Essence</strong>
-                        <p>Price: $9.99</p>
+                        <h3>{title}</h3>
+                        <strong>{brand}</strong>
+                        <p>Price: ${price}</p>
                     </section>
                 </section>
                 <section>
                     <p>Quantity:</p>
-                    <p>1</p>
+                    <p>{quantity}</p>
                     <button><MdOutlineAddShoppingCart  size={20}/></button>
                 </section>
             </section>

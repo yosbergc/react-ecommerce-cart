@@ -1,6 +1,6 @@
 .inner-single-product {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     justify-items: right;
     width: 100%;
@@ -11,8 +11,8 @@
     border-radius: 8px;
 }
 .cart-single-product img {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
 }
 .cart-single-product p {
     color: gray;
