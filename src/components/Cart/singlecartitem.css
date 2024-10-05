@@ -1,0 +1,24 @@
+.cart-single-product {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.cart-single-product img {
+    width: 100px;
+    height: 100px;
+}
+.cart-single-product p {
+    color: gray;
+}
+.cart-single-product button {
+    height: fit-content;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.cart-single-product .partOne {
+    display: flex;
+    align-items: center;
+}
