@@ -7,6 +7,15 @@ function useFilters() {
         minPrice: 0,
         category: 'all'
     })
+    const minPrice = filters.minPrice
+    
+    function changeMinPrice(newPrice) {
+        setFilters(prevState => ({ ...prevState, minPrice: newPrice }))
+    }
+    
+    function changeCategory(newCategory) {
+        setFilters(prevState => ({ ...prevState, category: newCategory}))
+    }
 
     const filteredProducts = products.filter(product => {
         return product.price >= filters.minPrice &&
@@ -15,6 +24,6 @@ function useFilters() {
         )
     })
 
-    return { filteredProducts }
+    return { filteredProducts, minPrice, changeMinPrice, changeCategory }
 }
 export { useFilters }

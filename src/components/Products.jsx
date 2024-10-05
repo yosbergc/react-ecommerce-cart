@@ -1,6 +1,10 @@
 import { SingleProduct } from "./SingleProduct"
+import { FilterContext } from "../context/FilterContext"
+import { useContext } from 'react'
+
 import './products.css'
-function Products({ products }) {
+function Products() {
+    const { filteredProducts: products } = useContext(FilterContext)
     return (
         <section className="products-section">
                 {
@@ -12,6 +16,7 @@ function Products({ products }) {
                             brand={product.brand}
                             imageSrc={product.thumbnail}
                             SKU={product.sku}
+                            category={product.category}
                         />
                     })
                 }

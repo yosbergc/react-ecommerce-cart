@@ -7,9 +7,6 @@
     flex-direction: column;
     justify-content: space-between;
 }
-.single-product-card h4 {
-    margin-bottom: 20px;
-}
 .single-product-card img {
     width: 100%;
     object-fit: cover;
@@ -40,4 +37,13 @@
     border-radius: 4px;
     margin-top: 20px;
     cursor: pointer;
+}
+.category-product {
+    margin-top: 5px;
+    background-color: rgb(20, 0, 79);
+    width: fit-content;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 16px;
+    font-size: 12px;
 }
