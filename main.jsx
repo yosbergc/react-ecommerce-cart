@@ -1,5 +1,5 @@
 import reactDOM from 'react-dom/client'
-import { App } from './src/components/App'
+import { App } from './src/components/App/App'
 import { FilterContextProvider } from './src/context/FilterContext'
 import './main.css'
 

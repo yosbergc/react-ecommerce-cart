@@ -1,5 +1,5 @@
-import { SingleProduct } from "./SingleProduct"
-import { FilterContext } from "../context/FilterContext"
+import { SingleProduct } from "../SingleProducts/SingleProduct"
+import { FilterContext } from "../../context/FilterContext"
 import { useContext } from 'react'
 
 import './products.css'

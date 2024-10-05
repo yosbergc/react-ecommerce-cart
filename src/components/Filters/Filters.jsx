@@ -1,5 +1,5 @@
 import { useId } from 'react'
-import { FilterContext } from '../context/FilterContext'
+import { FilterContext } from '../../context/FilterContext'
 import { useContext } from 'react'
 import './filters.css'
 function Filters() {

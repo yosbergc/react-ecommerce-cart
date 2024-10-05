@@ -1,6 +1,6 @@
 import './app.css'
-import { Products } from './Products'
-import { Filters } from './Filters'
+import { Products } from '../Products/Products'
+import { Filters } from '../Filters/Filters'
 function App() {
     return (
         <main>

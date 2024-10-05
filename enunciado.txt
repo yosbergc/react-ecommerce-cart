@@ -1,8 +1,8 @@
 
 ✅ Muestra una lista de productos que vienen de un FETCH
-Añade un filtro por categoría
-Añade un filtro por precio
-Haz uso de useContext para evitar pasar props innecesarias.
+✅ Añade un filtro por categoría
+✅ Añade un filtro por precio
+✅ Haz uso de useContext para evitar pasar props innecesarias.
 
 Carrito:
 
