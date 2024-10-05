@@ -29,7 +29,7 @@ function Cart() {
                         cart.map(producto => {
                             return <SingleCartItem
                                 key={producto.id}
-                                title={producto.id}
+                                title={producto.title}
                                 brand={producto.brand}
                                 price={producto.price}
                                 thumbnail={producto.thumbnail}
