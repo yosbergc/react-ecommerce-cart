@@ -1,6 +1,7 @@
 import { useId, useState } from 'react'
 import { IoCartOutline } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
+import { MdOutlineAddShoppingCart } from "react-icons/md";
 import './cart.css'
 import './singlecartitem.css'
 function Cart() {
@@ -34,16 +35,22 @@ function Cart() {
 function SingleCartItem() {
     return (
         <article className="cart-single-product">
+            <section className="inner-single-product">
                 <section className="partOne">
-                <img src="https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png" alt="Product" />
-                <section className="information-single">
-                    <h3>Essence Mascara Lash Princess</h3>
-                    <strong>Essence</strong>
-                    <p>$9.99</p>
-                    <p>Quantity: 1</p>
+                    <img src="https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png" alt="Product" />
+                    <section className="information-single">
+                        <h3>Essence Mascara Lash Princess</h3>
+                        <strong>Essence</strong>
+                        <p>Price: $9.99</p>
+                    </section>
+                </section>
+                <section>
+                    <p>Quantity:</p>
+                    <p>1</p>
+                    <button><MdOutlineAddShoppingCart  size={20}/></button>
                 </section>
             </section>
-            <button>Delete</button>
+            <button className="delete-btn">Delete</button>
         </article>
     )
 }

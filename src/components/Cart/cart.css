@@ -17,14 +17,13 @@
 }
 .cart {
     padding: 20px;
-    background-color: black;
+    background-color: rgb(255, 255, 255);
     position: fixed;
     right: 0px;
     top: 0px;
     width: 100%;
     max-width: 600px;
     height: 100%;
-    color: white;
 }
 .cart-header {
     display: flex;
@@ -35,4 +34,5 @@
     display: grid;
     gap: 10px;
     width: 100%;
+    margin-top: 20px;
 }
