@@ -3,10 +3,12 @@ import { useCart } from '../hooks/useCart'
 const CartContext = createContext()
 
 function ProvideCartContext({ children }) {
-    const { cart, addProduct } = useCart()
+    const { cart, addProduct, deleteProduct, clearCart } = useCart()
     return <CartContext.Provider value={{
         cart,
-        addProduct
+        addProduct,
+        deleteProduct,
+        clearCart
     }}>
         { children }
     </CartContext.Provider>

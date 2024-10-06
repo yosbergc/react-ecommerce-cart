@@ -6,12 +6,19 @@ import { useContext } from 'react'
 
 import './products.css'
 function Products() {
-    const { addProduct } = useContext(CartContext)
+    const { cart, addProduct, deleteProduct } = useContext(CartContext)
     const { filteredProducts: products } = useContext(FilterContext)
+
+    function checkIfProductIsInCart(currentProduct) {
+        return cart.some(product => {
+            return product.id === currentProduct.id
+        })
+    }
     return (
         <section className="products-section">
                 {
                     products.map(product => {
+                        const isProductInCart = checkIfProductIsInCart(product)
                         return <SingleProduct
                             key={product.id}
                             title={product.title}
@@ -21,6 +28,8 @@ function Products() {
                             SKU={product.sku}
                             category={product.category}
                             addProduct={() => addProduct(product)}
+                            isProductInCart={isProductInCart}
+                            handleDelete={() => deleteProduct(product)}
                         />
                     })
                 }

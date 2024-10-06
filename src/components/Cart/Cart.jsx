@@ -6,7 +6,7 @@ import { MdOutlineAddShoppingCart } from "react-icons/md";
 import './cart.css'
 import './singlecartitem.css'
 function Cart() {
-    const { cart } = useContext(CartContext)
+    const { cart, addProduct, deleteProduct } = useContext(CartContext)
     const [showCart, setShowCart] = useState(false)
     function handleShow() {
         setShowCart(!showCart)
@@ -34,6 +34,8 @@ function Cart() {
                                 price={producto.price}
                                 thumbnail={producto.thumbnail}
                                 quantity={producto.quantity}
+                                handleDelete={() => deleteProduct(producto)}
+                                handleAdd={() => addProduct(producto)}
                             />
                         })
                     }
@@ -45,7 +47,7 @@ function Cart() {
     )
 }
 
-function SingleCartItem({ title, brand, price, thumbnail, quantity}) {
+function SingleCartItem({ title, brand, price, thumbnail, quantity, handleDelete, handleAdd}) {
     return (
         <article className="cart-single-product">
             <section className="inner-single-product">
@@ -60,10 +62,10 @@ function SingleCartItem({ title, brand, price, thumbnail, quantity}) {
                 <section>
                     <p>Quantity:</p>
                     <p>{quantity}</p>
-                    <button><MdOutlineAddShoppingCart  size={20}/></button>
+                    <button onClick={handleAdd}><MdOutlineAddShoppingCart  size={20}/></button>
                 </section>
             </section>
-            <button className="delete-btn">Delete</button>
+            <button className="delete-btn" onClick={handleDelete}>Delete</button>
         </article>
     )
 }
